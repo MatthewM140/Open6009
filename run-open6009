@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cd "$(dirname "$0")"
+if [[ ! -x .venv/bin/python ]]; then
+  echo 'Open6009 setup required. Run ./install.sh first.' >&2
+  exit 1
+fi
+if ! .venv/bin/python -c 'import open6009, PySide6, pyqtgraph' 2>/dev/null; then
+  echo 'Open6009 is incomplete. Run ./install.sh again.' >&2
+  exit 1
+fi
+exec .venv/bin/python -m open6009.gui

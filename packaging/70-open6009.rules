@@ -1,0 +1,2 @@
+# Install only after reviewing local group policy. This grants no firmware-specific privilege.
+SUBSYSTEM=="usb", ATTR{idVendor}=="3923", ATTR{idProduct}=="717b", MODE="0660", TAG+="uaccess"

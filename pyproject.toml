@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "open6009"
+version = "1.0.0"
+description = "Native Linux driver and desktop instrument for the NI USB-6009"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {file = "LICENSE"}
+authors = [{name = "Open6009 contributors"}]
+keywords = ["daq", "usb", "instrumentation", "linux", "NI USB-6009"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: X11 Applications :: Qt",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: POSIX :: Linux",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Topic :: Scientific/Engineering",
+]
+dependencies = [
+  "PySide6-Essentials>=6.6,<7",
+  "pyqtgraph>=0.13,<0.15",
+]
+
+[project.scripts]
+open6009 = "open6009.cli:main"
+
+[project.gui-scripts]
+open6009-gui = "open6009.gui.window:run"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

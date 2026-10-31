@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Open6009
+GenericName=USB Data Acquisition
+Comment=Native Linux instrument application for the NI USB-6009
+Exec="@APP_DIR@/run-open6009"
+Path=@APP_DIR@
+Icon=open6009
+Terminal=false
+Categories=Science;Engineering;
+Keywords=DAQ;USB-6009;oscilloscope;acquisition;instrument;
+StartupNotify=true
+StartupWMClass=Open6009
